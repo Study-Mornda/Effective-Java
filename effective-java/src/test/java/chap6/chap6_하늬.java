@@ -43,6 +43,17 @@ public class chap6_하늬 {
         assertThat(s1 == s2);
     }
 
+    @DisplayName("이미 Pool에 값이 있다면 같은 주소를 바라본다.")
+    @Test
+    public void test2_1(){
+        String s = new String("aaa");
+        String b = "aaa";
+        String c = s.intern();
+
+        System.out.println(s == b); // false
+        assertThat(b == c); // true
+    }
+
     @DisplayName("생성 비용이 아주 비싼 객체는 초기화 시 캐싱해두면 재사용이 가능하다.")
     @Test
     public void test3(){
@@ -95,5 +106,6 @@ public class chap6_하늬 {
         end = System.currentTimeMillis();
         System.out.println((end-start)/1000.0+"s");
     }
+
 
 }
