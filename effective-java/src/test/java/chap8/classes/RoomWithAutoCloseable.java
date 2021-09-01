@@ -1,12 +1,6 @@
 package chap8.classes;
 
-import java.lang.ref.Cleaner;
-
-public class Room implements AutoCloseable {
-
-    protected void finalize(){
-        System.out.println("finalize 호출");
-    }
+public class RoomWithAutoCloseable implements AutoCloseable {
 
     /**
      * AutoCloseable#close덕분에 try-with-resources를 사용해
