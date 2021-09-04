@@ -27,12 +27,12 @@ jobs:
       - name: Find Comment
         uses: peter-evans/find-comment@v1.3.0
         with:
-          issue-number: 2
+          issue-number: 13
           body-includes: ${{ github.event.comment.body }}
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v1.4.5
         with:
-          issue-number: 2
+          issue-number: 13
           body: |
             > @${{ github.event.comment.user.login }}, ${{ github.event.comment.html_url }}
             
