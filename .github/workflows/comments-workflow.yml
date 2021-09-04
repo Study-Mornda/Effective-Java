@@ -1,0 +1,33 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Add comment
+on:
+  issue_comment:
+    types: [created, edited, deleted]
+jobs:
+  issue_commented:
+    name: Issue comment
+    # Run this job only for none pr comments
+    if: ${{ !github.event.issue.pull_request }} 
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: Build output
+
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v1.4.5
+        with:
+          issue-number: 13
+          body: |
+            ${{ github.event.body }}
+            echo "${{ github.event.body }}"
