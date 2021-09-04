@@ -26,8 +26,9 @@ jobs:
 
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v1.4.5
+        run: echo "${{ github.event.comment.body }}"
         with:
           issue-number: 13
           body: |
-            ${{ github.event.body }}
-            echo "${{ github.event.body }}"
+            ${{ github.event.comment.body }}
+            
