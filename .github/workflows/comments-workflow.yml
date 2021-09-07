@@ -19,27 +19,23 @@ jobs:
           echo '${{ github.event.comment.id }}'
           echo '${{ github.event.comment.body }}'
           echo '${{ github.event.comment.user.login }}'
+      - name: Find Comment
+        uses: peter-evans/find-comment@v1.3.0
+        id: fc
+        with:
+          issue-number: 13
+          body-includes: ${{ github.event.comment.body }}
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v1.4.5
+        comment-id: ${{steps.fc.outputs.comment-id}}
+        with:
+          issue-number: 13
+          body: |
+            > @${{ github.event.comment.user.login }}, ${{ github.event.comment.html_url }}
+            
+            ${{ github.event.comment.body }}
       - name: Add reactions
         uses: peter-evans/create-or-update-comment@v1.4.5
         with:
           comment-id: ${{github.event.comment.id}}
           reactions: rocket
-      - name: Find Comment
-        uses: peter-evans/find-comment@v1.3.0
-        with:
-          issue-number: 13
-          body-includes: ${{ github.event.comment.body }}
->>>>>>> 4f3b1b47bc23fdf6ffc94e4ca970beadf511e06e
-      - name: Create or Update Comment
-        uses: peter-evans/create-or-update-comment@v1.4.5
-        with:
-          issue-number: 13
-          body: |
-<<<<<<< HEAD
-            ${{ github.event.comment.body }}
-            
-=======
-            > @${{ github.event.comment.user.login }}, ${{ github.event.comment.html_url }}
-            
-            ${{ github.event.comment.body }}
->>>>>>> 4f3b1b47bc23fdf6ffc94e4ca970beadf511e06e
