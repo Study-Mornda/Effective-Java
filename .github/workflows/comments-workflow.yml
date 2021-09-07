@@ -6,28 +6,40 @@
 name: Add comment
 on:
   issue_comment:
-    types: [created, edited, deleted]
+    types: [created, edited]
 jobs:
   issue_commented:
     name: Issue comment
-    # Run this job only for none pr comments
-    if: ${{ !github.event.issue.pull_request }} 
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.event.comment.body, '[질문]') }}
     permissions:
       issues: write
     steps:
+      - run : |
+          echo '${{ github.event.comment.id }}'
+          echo '${{ github.event.comment.body }}'
+          echo '${{ github.event.comment.user.login }}'
+      - name: Add reactions
+        uses: peter-evans/create-or-update-comment@v1.4.5
+        with:
+          comment-id: ${{github.event.comment.id}}
+          reactions: rocket
       - name: Find Comment
         uses: peter-evans/find-comment@v1.3.0
-        id: fc
         with:
-          issue-number: ${{ github.event.pull_request.number }}
-          comment-author: 'github-actions[bot]'
-          body-includes: Build output
-
+          issue-number: 13
+          body-includes: ${{ github.event.comment.body }}
+>>>>>>> 4f3b1b47bc23fdf6ffc94e4ca970beadf511e06e
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v1.4.5
         with:
           issue-number: 13
           body: |
+<<<<<<< HEAD
             ${{ github.event.comment.body }}
             
+=======
+            > @${{ github.event.comment.user.login }}, ${{ github.event.comment.html_url }}
+            
+            ${{ github.event.comment.body }}
+>>>>>>> 4f3b1b47bc23fdf6ffc94e4ca970beadf511e06e
