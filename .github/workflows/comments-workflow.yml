@@ -27,8 +27,8 @@ jobs:
           body-includes: ${{ github.event.comment.body }}
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v1.4.5
-        comment-id: ${{steps.fc.outputs.comment-id}}
         with:
+          comment-id: ${{steps.fc.outputs.comment-id}}
           issue-number: 13
           body: |
             > @${{ github.event.comment.user.login }}, ${{ github.event.comment.html_url }}
