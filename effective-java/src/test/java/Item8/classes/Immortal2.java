@@ -1,4 +1,4 @@
-package chap8.classes;
+package Item8.classes;
 
 public class Immortal2 {
     public static Immortal2 immortal2;

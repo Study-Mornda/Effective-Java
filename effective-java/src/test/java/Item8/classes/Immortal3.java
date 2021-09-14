@@ -1,4 +1,4 @@
-package chap8.classes;
+package Item8.classes;
 
 public class Immortal3 {
     public int amount;

@@ -1,4 +1,4 @@
-package chap8.classes;
+package Item8.classes;
 
 public class Immortal3Extension extends Immortal3{
     public static Immortal3 immortal3;

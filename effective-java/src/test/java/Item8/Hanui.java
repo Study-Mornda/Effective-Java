@@ -1,6 +1,6 @@
-package chap8;
+package Item8;
 
-import chap8.classes.*;
+import Item8.classes.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
