@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DisplayName("Comparable을 구현할지 고려하라")
 public class Hanui {
 
-    @DisplayName("BigDecimal은 equals로 비교하면 다른 것들이 있다.")
+    @DisplayName("BigDecimal은 equals로 비교했을 때 예상과 다르다.")
     @Test
     public void test2(){
         BigDecimal bc = new BigDecimal("1.0");
@@ -41,7 +41,4 @@ public class Hanui {
         System.out.println();
         tset.stream().forEach(System.out::println);
     }
-
-
-
 }

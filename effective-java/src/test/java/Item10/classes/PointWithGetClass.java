@@ -10,6 +10,7 @@ public class PointWithGetClass {
 
     @Override
     public boolean equals(Object o){
+
         if(o == null || o.getClass() !=getClass()) {
             System.out.println(o.getClass());
             return false;

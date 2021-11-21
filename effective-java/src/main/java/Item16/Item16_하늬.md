@@ -1,12 +1,12 @@
-#Item16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라
+# Item16. public 클래스에서는 public 필드가 아닌 접근자 메서드를 사용하라
 
 ## 데이터 캡슐화하기
 
 데이터 모으기만 하는 아무 목적 없는 퇴보한 클래스는 **필드가 public이어서는 안 된다.**
 ```java
 class Point{
-    public double x;
-    public double y;
+	public double x;
+	public double y;
 }
 ```
 문제점
