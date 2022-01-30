@@ -1,8 +1,0 @@
-package Item8.classes;
-
-public class Normal {
-
-    public void finalize() {
-
-    }
-}
