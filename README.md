@@ -3,7 +3,7 @@ Effective Java 3/E 스터디 저장소입니다.
 
 ## 0. 스터디 정보
 * 기간 : 2021/08/19 ~ 
-* 참여 인원 : 강동민([@riyenas0925](https://github.com/riyenas0925)), 김하늬([@kimhanui](https://github.com/kimhanui))
+* 참여 인원 : 강동민([@riyenas0925](https://github.com/riyenas0925)), 김하늬([@kimhanui](https://github.com/kimhanui)), 오경식([@cheewr85](https://github.com/cheewr85))
 * 도서 : 이펙티브 자바 Effective Java 3/E (조슈아 블로크 저/개앞맵시 역)
 
 ## 1. 스터디 주기
